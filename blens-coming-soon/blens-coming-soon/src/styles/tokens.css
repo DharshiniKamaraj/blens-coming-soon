@@ -1,0 +1,19 @@
+/* ============================================================
+   DESIGN TOKENS — change these to re-theme the whole site
+   ============================================================ */
+:root {
+  --black: #0b0a0a;
+  --charcoal: #141210;
+  --white: #faf9f6;
+  --paper: #f3f1ec;
+  --red: #a6182c;
+  --red-bright: #c81e3a;
+  --grey: #8c8884;
+  --grey-dark: #5a5754;
+  --ink: #17140f;
+  --line-dark: rgba(250, 249, 246, 0.14);
+  --line-light: rgba(23, 20, 15, 0.14);
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}

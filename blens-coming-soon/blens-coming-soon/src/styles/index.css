@@ -1,0 +1,10 @@
+/* ============================================================
+   BLENS — global stylesheet entry point
+   Each section's styles live in its own file below — edit the
+   relevant file to change that section without touching others.
+   ============================================================ */
+@import './tokens.css';
+@import './base.css';
+@import './hero.css';
+@import './next.css';
+@import './footer.css';

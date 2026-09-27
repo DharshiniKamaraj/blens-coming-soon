@@ -1,0 +1,296 @@
+/* ============================================================
+   HERO — white background, red accents
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(28px + env(safe-area-inset-top, 0px)) 24px 48px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.frame-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 5;
+  border-color: var(--line-light);
+}
+.frame-corner.tl {
+  top: calc(18px + env(safe-area-inset-top, 0px));
+  left: 18px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.frame-corner.tr {
+  top: calc(18px + env(safe-area-inset-top, 0px));
+  right: 18px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+.frame-corner.bl {
+  bottom: 18px;
+  left: 18px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+.frame-corner.br {
+  bottom: 18px;
+  right: 18px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  color: var(--grey-dark);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s forwards;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-bright);
+  flex-shrink: 0;
+  animation: pulse-dot 2.6s ease-in-out infinite;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(64px, 20vw, 128px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin-top: 18px;
+  color: var(--ink);
+  opacity: 0;
+  animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+.wordmark .accent {
+  color: var(--red-bright);
+}
+
+.signature {
+  margin-top: 12px;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--grey-dark);
+  font-style: italic;
+  font-family: var(--serif);
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+}
+.signature span {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.subline {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  font-weight: 500;
+  color: var(--grey);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.48s forwards;
+}
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(30px, 7vw, 50px);
+  line-height: 1.08;
+  margin-top: 34px;
+  max-width: 11ch;
+  color: var(--ink);
+  opacity: 0;
+  animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.58s forwards;
+}
+
+.lede {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--grey-dark);
+  max-width: 38ch;
+  line-height: 1.6;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s forwards;
+}
+
+.badge-row {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.82s forwards;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  padding: 8px 16px 8px 12px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.badge .ring {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--red-bright);
+}
+.badge .ring::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid var(--red-bright);
+  opacity: 0.6;
+  animation: ring-pulse 2.6s ease-out infinite;
+}
+.crafting {
+  font-size: 13px;
+  color: var(--grey);
+}
+
+.cta {
+  margin-top: 38px;
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.94s forwards;
+}
+.cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 34px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.45s ease;
+}
+.cta a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--red);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+}
+.cta a:hover {
+  color: var(--white);
+  border-color: var(--red);
+}
+.cta a:hover::before {
+  transform: translateX(0);
+}
+.cta a:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: 4px;
+}
+
+/* ---------- abstract focus visual ---------- */
+.focus-visual {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+  animation: fadein 1.4s ease 0.5s forwards;
+}
+@keyframes fadein {
+  to {
+    opacity: 1;
+  }
+}
+.focus-visual svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.ring-rotate {
+  transform-origin: center;
+  animation: spin 34s linear infinite;
+}
+.ring-rotate-rev {
+  transform-origin: center;
+  animation: spin-rev 46s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.focus-pulse {
+  animation: focus-breathe 4.5s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes focus-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+  }
+  .focus-visual {
+    max-width: 520px;
+  }
+}

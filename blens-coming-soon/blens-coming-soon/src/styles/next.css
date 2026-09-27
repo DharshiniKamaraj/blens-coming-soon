@@ -1,0 +1,120 @@
+/* ============================================================
+   NEXT FRAME SECTION — dark charcoal contrast panel
+   ============================================================ */
+.next {
+  background: var(--black);
+  color: var(--white);
+  padding: 96px 24px 90px;
+  position: relative;
+}
+.next::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--red-bright) 50%, transparent);
+}
+.next-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.next-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--grey);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.next-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(28px, 6vw, 44px);
+  line-height: 1.12;
+  margin-top: 14px;
+  max-width: 14ch;
+  color: var(--white);
+}
+.next-text {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--grey);
+  max-width: 46ch;
+}
+
+.grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line-dark);
+}
+.card {
+  padding: 32px 4px;
+  border-bottom: 1px solid var(--line-dark);
+  position: relative;
+  transition: padding-left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 32px;
+  bottom: 32px;
+  width: 2px;
+  background: var(--red-bright);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card:hover {
+  padding-left: 20px;
+}
+.card:hover::before {
+  transform: scaleY(1);
+}
+.card-num {
+  font-size: 11px;
+  color: var(--red-bright);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.card-title {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 600;
+  margin-top: 12px;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.card-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--grey);
+  max-width: 34ch;
+  line-height: 1.55;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line-dark);
+    border-left: 1px solid var(--line-dark);
+  }
+  .card {
+    border-right: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+    padding: 36px 28px;
+  }
+  .card:hover {
+    padding-left: 28px;
+  }
+  .card::before {
+    top: 36px;
+    bottom: 36px;
+  }
+}
